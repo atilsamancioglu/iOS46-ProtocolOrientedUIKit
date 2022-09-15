@@ -17,6 +17,8 @@
 		FC7E129428D3A51B0031A907 /* ProtocolOrientedUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E129328D3A51B0031A907 /* ProtocolOrientedUIKitUITestsLaunchTests.swift */; };
 		FC7E12A528D3AA9C0031A907 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E12A428D3AA9C0031A907 /* APIManager.swift */; };
 		FC7E12A728D3AAB00031A907 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E12A628D3AAB00031A907 /* User.swift */; };
+		FC7E12A928D3ABA30031A907 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E12A828D3ABA30031A907 /* UserViewModel.swift */; };
+		FC7E12AB28D3AE1B0031A907 /* UserViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E12AA28D3AE1B0031A907 /* UserViewModelOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		FC7E129328D3A51B0031A907 /* ProtocolOrientedUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolOrientedUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FC7E12A428D3AA9C0031A907 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FC7E12A628D3AAB00031A907 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FC7E12A828D3ABA30031A907 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		FC7E12AA28D3AE1B0031A907 /* UserViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 		FC7E12A228D3AA7D0031A907 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FC7E12A828D3ABA30031A907 /* UserViewModel.swift */,
+				FC7E12AA28D3AE1B0031A907 /* UserViewModelOutput.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,7 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7E12A528D3AA9C0031A907 /* APIManager.swift in Sources */,
+				FC7E12A928D3ABA30031A907 /* UserViewModel.swift in Sources */,
 				FC7E127528D3A51A0031A907 /* UserViewController.swift in Sources */,
+				FC7E12AB28D3AE1B0031A907 /* UserViewModelOutput.swift in Sources */,
 				FC7E127128D3A51A0031A907 /* AppDelegate.swift in Sources */,
 				FC7E12A728D3AAB00031A907 /* User.swift in Sources */,
 				FC7E127328D3A51A0031A907 /* SceneDelegate.swift in Sources */,

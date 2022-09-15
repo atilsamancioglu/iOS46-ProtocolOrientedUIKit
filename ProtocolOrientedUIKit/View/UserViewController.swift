@@ -7,8 +7,9 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, UserViewModelOutput {
     
+    private let viewModel : UserViewModel
     
     private let nameLabel: UILabel = {
       let label = UILabel()
@@ -30,11 +31,23 @@ class UserViewController: UIViewController {
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
+    
+    init(viewModel: UserViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel.output = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
 
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViews()
-    fetchUsers()
+      viewModel.fetchUsers()
   }
   
   private func setupViews() {
@@ -61,24 +74,34 @@ class UserViewController: UIViewController {
       
     ])
   }
-  
-  private func fetchUsers() {
-    APIManager.shared.fetchUser { result in
-      switch result {
-      case .success(let user):
-          DispatchQueue.main.async {
-              self.usernameLabel.text = user.username
-              self.emailLabel.text = user.email
-              self.nameLabel.text = user.name
-          }
-      case .failure:
-          DispatchQueue.main.async {
-              self.emailLabel.text = "No user found"
-          }
-      }
+    
+    func updateView(name: String, email: String, userName: String) {
+        self.usernameLabel.text = userName
+        self.emailLabel.text = email
+        self.nameLabel.text = name
+
     }
-  }
+  /*
+    private func fetchUsers() {
+        APIManager.shared.fetchUser { result in
+          switch result {
+          case .success(let user):
+              DispatchQueue.main.async {
+                  self.usernameLabel.text = user.username
+                  self.emailLabel.text = user.email
+                  self.nameLabel.text = user.name
+              }
+          case .failure:
+              DispatchQueue.main.async {
+                  self.emailLabel.text = "No user found"
+              }
+          }
+        }
+    }
+    
+   */
 }
+
 
 
 
